@@ -1,0 +1,29 @@
+{% extends "AppCoder/padre.html" %} <!--la fuente de nuestros datos-->
+    {% load static %}  <!--Toma lo que está dentro de la carpeta "static"-->
+{% block contenidoQueCambia %}
+
+
+&nbsp;&nbsp;<p>Te encuentras en <strong>{{query}}</strong></p>
+
+{% if articulos %}  
+
+
+    <p>En tu país de origen se habla el idioma:</p>
+
+    {% for articulo in articulos %}
+
+    
+    &nbsp;&nbsp;&nbsp; <strong>{{articulo.idioma}}</strong>
+    
+
+    {% endfor %}
+    
+
+{% else %}
+    
+    <p>No está el pais buscado</p>
+
+{% endif %}
+
+
+{% endblock %}
